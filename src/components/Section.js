@@ -1,6 +1,6 @@
 import React from 'react';
 import uniqid from 'uniqid';
-import Form from './Form';
+import SubSection from './SubSection';
 
 const Section = (props) => {
   const { title } = props;
@@ -8,11 +8,11 @@ const Section = (props) => {
   return (
     <div>
       {title}
-      <Form
+      <SubSection
         sections={{ Name: uniqid(), Email: uniqid(), 'Phone Number': uniqid() }}
       />
-      {/* <Form /> */}
-      {/* <Form /> */}
+      {/* <SubSection /> */}
+      {/* <SubSection /> */}
     </div>
   );
 };
