@@ -53,6 +53,21 @@ class SubSection extends Component {
     });
   };
 
+  editTask = () => {
+    const { tasks } = this.state;
+    const taskObj = [];
+
+    // Reset input
+    tasks.forEach((task) => {
+      taskObj.push(task);
+    });
+
+    this.setState({
+      task: taskObj,
+      tasks: [],
+    });
+  };
+
   render() {
     const { task, tasks } = this.state;
     console.log(this.state);
@@ -64,8 +79,8 @@ class SubSection extends Component {
           onSubmitTask={this.onSubmitTask}
           handleChange={this.handleChange}
         />
-        <Overview tasks={tasks} />
-        {task.length === 0 && <button type="submit">Edit</button>}
+        {task.length === 0 && <Overview tasks={tasks} />}
+        {task.length === 0 && <button onClick={this.editTask}>Edit</button>}
       </div>
     );
   }
