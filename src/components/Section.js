@@ -3,16 +3,19 @@ import uniqid from 'uniqid';
 import SubSection from './SubSection';
 
 const Section = (props) => {
-  const { title } = props;
+  const { title, section } = props;
+  const sectionObj = {};
+
+  section.forEach((label) => {
+    sectionObj[label] = uniqid();
+  });
+
+  console.log(sectionObj);
 
   return (
     <div>
-      {title}
-      <SubSection
-        sections={{ Name: uniqid(), Email: uniqid(), 'Phone Number': uniqid() }}
-      />
-      {/* <SubSection /> */}
-      {/* <SubSection /> */}
+      <div className="title">{title}</div>
+      <SubSection sections={sectionObj} />
     </div>
   );
 };

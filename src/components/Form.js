@@ -7,7 +7,7 @@ const Form = (props) => {
         {task.map((task) => {
           return (
             <div key={task.id} id={task.id}>
-              <label htmlFor={task.label}>{task.label}</label>
+              <label htmlFor={task.label}>{task.label}: </label>
               <input
                 onChange={handleChange}
                 value={task.text}
@@ -17,7 +17,6 @@ const Form = (props) => {
             </div>
           );
         })}
-
         {task.length > 0 && <button type="submit">Submit</button>}
       </form>
     </div>
