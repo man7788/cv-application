@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/Section.css';
 import uniqid from 'uniqid';
 import SubSection from './SubSection';
 
@@ -13,7 +14,7 @@ const Section = (props) => {
   console.log(sectionObj);
 
   return (
-    <div>
+    <div className="section">
       <div className="title">{title}</div>
       <SubSection sections={sectionObj} />
     </div>

@@ -1,12 +1,14 @@
+import '../styles/Form.css';
+
 const Form = (props) => {
   const { task, onSubmitTask, handleChange } = props;
 
   return (
     <div>
-      <form onSubmit={onSubmitTask}>
+      <form onSubmit={onSubmitTask} className="form">
         {task.map((task) => {
           return (
-            <div key={task.id} id={task.id}>
+            <div key={task.id} id={task.id} className="input">
               <label htmlFor={task.label}>{task.label}: </label>
               <input
                 onChange={handleChange}
